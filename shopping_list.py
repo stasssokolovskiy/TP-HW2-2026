@@ -24,7 +24,7 @@ class ShoppingList:
             else:
                 quantity_by_key[key] = ingredient.quantity
         ingredients = [Ingredient(name, quantity, unit) for (name, unit), quantity in quantity_by_key.items()]
-        ingredients.sort(key=lambda x: x.quantity)
+        ingredients.sort(key=lambda x: x.name)
         return ingredients
     
     def __add__(self, other: "ShoppingList") -> "ShoppingList":
